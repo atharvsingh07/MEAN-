@@ -1,0 +1,135 @@
+<div class="f">
+    <!-- <h1>Product Inventory</h1>
+
+<div class="box">
+ <form >
+    <label>Product Code:</label>
+    <input type="number" name="prod" placeholder="Enter Code" [(ngModel)]="product.productCode" required>
+    <label>Product Name:</label>
+    <input type="text" name="prodName" placeholder="Enter Name" [(ngModel)]="product.productName" required>
+    <label>Category:</label>
+    <input type="text" name="prodCAt" placeholder="Enter Category" [(ngModel)]="product.category" required>
+    <label>Price :</label>
+    <input type="number" name="prodprice" placeholder="Enter Price" [(ngModel)]="product.price" required>
+    <div class="d">
+    <button type="submit" (click)="adddata()">Add Product</button>
+    </div>
+ </form>
+</div>
+
+<div class="tbl">
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Product Category</th>
+        <th>Product Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let pro of productInfo">
+        <td>{{pro.productCode}}</td>
+        <td>{{pro.productName}}</td>
+        <td>{{pro.category}}</td>
+        <td>{{pro.price}}</td>
+        <td>
+            
+          <button>Delete</button>
+          <button (click)="updatedata( pro)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+
+<div class="box">
+    <h1>Product Inventory</h1>
+  <form (ngSubmit)="selectedProductId ? updateProduct() : adddata()">
+
+    <label>Product Code:</label>
+    <input
+      type="text"
+      name="productCode"
+      [(ngModel)]="product.productCode"
+      required
+      placeholder="Enter Code"
+    >
+
+    <label>Product Name:</label>
+    <input
+      type="text"
+      name="productName"
+      [(ngModel)]="product.productName"
+      required
+      placeholder="Enter Name"
+    >
+
+    <label>Category:</label>
+    <input
+      type="text"
+      name="category"
+      [(ngModel)]="product.category"
+      required
+      placeholder="Enter Category"
+    >
+
+    <label>Price:</label>
+    <input
+      type="number"
+      name="price"
+      [(ngModel)]="product.price"
+      required
+      placeholder="Enter Price"
+    >
+
+    <div class="d">
+      <button type="submit" >
+        {{ selectedProductId ? 'Update Product' : 'Add Product' }}
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<br>
+<br>
+
+<div class="tbl">
+    <h1>Product Display</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let pro of productInfo">
+        <td>{{ pro.productCode }}</td>
+        <td>{{ pro.productName }}</td>
+        <td>{{ pro.category }}</td>
+        <td>{{ pro.price }}</td>
+        <td>
+          <button type="button" (click)="editProduct(pro)">
+            Edit
+          </button>
+        </td>
+      </tr>
+
+      <tr *ngIf="productInfo.length === 0">
+        <td colspan="5">No products found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
