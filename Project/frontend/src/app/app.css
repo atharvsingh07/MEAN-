@@ -1,0 +1,22 @@
+form input
+{
+    height: 30px;
+    width: 200px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding-left: 20px;
+    outline: none;
+    color: rgb(31, 30, 30);
+}
+form label{
+    margin-left:10px;
+}
+textarea
+{
+   
+    background-color: whitesmoke;
+    border-radius: 20px;
+   padding: 20;
+    outline: none;
+    color: rgb(31, 30, 30);
+}

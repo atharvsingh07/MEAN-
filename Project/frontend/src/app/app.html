@@ -1,0 +1,34 @@
+<section class="h-500 bg-gray-1000">
+  <h1 class="text-center">MY NOTES LIB</h1>
+  <div class=" bg-white/30 max-h-max w-70 p-10 flex justify-center items-center rounded-2xl m-10 ">
+  <form 
+    #noteForm="ngForm"
+    (ngSubmit)="addData(noteForm)"
+    class="text-white/80 flex flex-col" >
+
+    <label for="name">Enter Username</label>
+    <input type="text" name="name" placeholder="enter your name" [(ngModel)]="notedata.user">
+    <br>
+    <label for="txt">Enter Notes</label>
+    <textarea class="p-2 h-20" name="txt" placeholder="Enter your notes" [(ngModel)]="notedata.note"></textarea>
+    <button  type="submit"
+    class=" bg-gray-800 h-10 w-25 mt-5 rounded-2xl text-sm font-bold text-white">Add Notes</button>
+  </form>
+</div>
+
+    <hr class="border-white/40"> 
+
+<div class="h-100 bg-gray-1000 p-10 flex  flex-wrap gap-5">
+    <div 
+          *ngFor="let n of note"
+          class="bg-white/20 max-h-max w-70 flex flex-col p-5 rounded-2xl">
+          <h1 class="text-center text-2xl text-white font-bold mb-5">{{n.user}}</h1>
+          <p>{{n.note}}</p>
+          <button (click)="editData(n)"
+          type="button"
+          class=" bg-gray-900 h-10 w-25 mt-5 rounded-2xl text-sm font-bold text-white">Update</button>
+    </div>
+     
+ </div>
+ 
+</section>
