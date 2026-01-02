@@ -1,0 +1,16 @@
+table {
+  width: 500px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: black;
+}
+ 
+th {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+ 
+td, th {
+  border: 1px solid white;
+  padding: 8px;
+}
